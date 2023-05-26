@@ -2,11 +2,7 @@
 
 ![Logo](logo.png)
 
-Este es un software para almacenar información de un inventario de productos, el cual lee, actualiza, borra y crea productos usando MVC, con PHP, MySQL, HTM y Bootstrap. :tw-1f4ca: :tw-1f4c8: :tw-1f4cb:
-
-**Table of Contents**
-
-[TOC]
+Este es un software para almacenar información de un inventario de productos, el cual lee, actualiza, borra y crea productos usando MVC, con PHP, MySQL, HTM y Bootstrap.
 
 #### Tecnologías utilizadas
 
@@ -30,7 +26,7 @@ Este es un software para almacenar información de un inventario de productos, e
 
 #### Uso
 
-** Crear producto **
+##### Crear producto
 
 El proyecto proporciona un formulario que te permite registrar productos en la base de datos. Sigue estos pasos para utilizarlo:
 
@@ -56,7 +52,7 @@ Recuerda que debes tener configurada correctamente la conexión a la base de dat
 
 Si deseas utilizar este formulario para registrar varios productos, simplemente repite los pasos anteriores para cada producto adicional que desees agregar.
 
-** Ver producto **
+##### Ver producto
 
 La página de inicio del proyecto muestra una tabla con todos los productos en línea. Sigue estos pasos para ver los productos:
 
@@ -68,7 +64,7 @@ La página de inicio del proyecto muestra una tabla con todos los productos en l
 * El botón con el icono de un lápiz (ícono de edición) te permite actualizar la información del producto. Al hacer clic en este botón, se redirigirá a la página de actualización (update.php) donde podrás modificar los datos del producto seleccionado.
 * El botón con el ícono de un bote de basura (ícono de eliminación) te permite eliminar el producto de la base de datos. Al hacer clic en este botón, se eliminará el producto seleccionado de forma permanente. Ten en cuenta que se mostrará una ventana de confirmación antes de proceder con la eliminación.
 
-** Editar producto **
+##### Editar producto
 
 El proyecto permite editar un producto existente mediante la siguiente acción:
 
@@ -85,7 +81,7 @@ El proyecto permite editar un producto existente mediante la siguiente acción:
 * Si la actualización en la base de datos es exitosa, se redireccionará automáticamente a la página principal del proyecto donde podrás ver el producto actualizado.
 * Si ocurre algún error durante la actualización en la base de datos, se mostrará un mensaje de error.
 
-** Eliminar producto **
+##### Eliminar producto
 
 El proyecto permite eliminar un producto existente a través de la siguiente acción:
 
@@ -117,6 +113,6 @@ El módulo de ventas permite realizar la compra de productos seleccionados. A co
 * La función actualizarStock() verificará el stock actual del producto y restará la cantidad vendida.
 * Si la operación de actualización es exitosa, se mostrará un mensaje de éxito. De lo contrario, se mostrará un mensaje de error.
 
-** Contacto **
+#### Contacto
 
 Si tienes alguna duda escribe al correo mboadaro@ibero.edu.co y con gusto atenderé cualquier inquietud.

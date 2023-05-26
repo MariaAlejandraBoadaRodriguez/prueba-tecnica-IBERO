@@ -23,15 +23,15 @@
                 $updateResult = $conexion->query($updateSql);
 
                 if ($updateResult) {
-                    echo "Se ha vendido exitosamente";
+                    echo '<div class="alert alert-success">Se ha vendido exitosamente</div>'; 
                 } else {
-                    echo "Error al actualizar el stock";
+                    echo '<div class="alert alert-danger">Error al actualizar el stock</div>'; 
                 }
             } else {
                 echo "No se puede realizar la venta debido a que no hay suficiente stock del producto";
             }
         } else {
-            echo "No se encontró el producto con ID $id.";
+            echo '<div class="alert alert-danger">No se encontró el producto con ID</div>';
         }
     }
 ?>

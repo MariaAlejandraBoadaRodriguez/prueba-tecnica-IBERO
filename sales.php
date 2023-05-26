@@ -7,8 +7,9 @@
     <title>Prueba Tecnica CRUD PHP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ea4fd06530.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="logo.png">
 </head>
-<body>
+<body class="col-5 p-3 m-auto">
     <form id="formulario" action="sales.php" method="POST">
         <?php
         // Incluir archivo de conexión a la base de datos
@@ -31,60 +32,38 @@
 
             return $productos;
         }
-
-        /* Procesar el formulario al hacer clic en el botón "Comprar"
-        if (isset($_POST['btnComprar'])) {
-            echo "El if se está ejecutando.";
-            $productosSeleccionados = isset($_POST['productos']) ? $_POST['productos'] : [];
-            echo "Productos seleccionados: ";
-            var_dump($productosSeleccionados); 
-            $cantidadProductos = count($productosSeleccionados);
-            if ($cantidadProductos > 0) {
-                foreach ($productosSeleccionados as $index => $productoId) {
-                    $id = $productoId;
-                    $cantidad = $_POST['cantidad'][$index];
-
-                    actualizarStock($id, $cantidad);
-                }
-
-                echo "La compra ha sido realizada exitosamente. La base de datos ha sido actualizada.";
-                // Otras acciones después de una compra exitosa...
-            } else {
-                echo "No se ha seleccionado ningún producto para comprar.";
-            }
-        }*/
-
-       
         ?>
 
-        
-        <h2>Adicionar Compra</h2>
+        <div class="p-2 m-auto">
+            <h2 class="text-center alert alert-secondary">Adicionar Compra</h2>
 
-        <label for="producto">Producto:</label>
-        <select name="productos" id="producto">
-            <?php
-            $productos = obtenerProductos();
+            <label for="producto">Producto:</label>
+            <select name="productos" id="producto">
+                <?php
+                $productos = obtenerProductos();
 
-            echo "<option value='0'>Seleccionar</option>";
-            foreach ($productos as $producto) {
-                $id = $producto['ID'];
-                $nombre = $producto['nombre'];
+                echo "<option value='0'>Seleccionar</option>";
+                foreach ($productos as $producto) {
+                    $id = $producto['ID'];
+                    $nombre = $producto['nombre'];
 
-                echo "<option value='$id'>$nombre</option>";
-            }
-            ?>
-        </select>
+                    echo "<option value='$id'>$nombre</option>";
+                }
+                ?>
+            </select>
 
-        <input type="number" placeholder="Cantidad" name="cantidad" id="cantidad" value="">
-        <input type="hidden" name="listado" id="listadoEntrada">
+            <input type="number" placeholder="Cantidad" name="cantidad" id="cantidad" value="">
+            <input type="hidden" name="listado" id="listadoEntrada">
 
+            <button class="m-3 btn btn-warning" type="button" onclick="agregarProducto()">Agregar</button>
+        </div>
 
-        <button type="button" onclick="agregarProducto()">Agregar</button>
+        <div class="p-2 m-auto">
+            <h3  class="text-center alert alert-secondary">Productos Seleccionados</h3>
+            <ul id="productosSeleccionados"></ul>
 
-        <h3>Productos Seleccionados</h3>
-        <ul id="productosSeleccionados"></ul>
-
-        <button type="submit" name="btnComprar" id="btnComprar" value="ventas ok">Comprar</button>
+            <button class="m-3 btn btn-success" type="submit" name="btnComprar" id="btnComprar" value="ventas ok">Comprar</button>
+        </div>
     </form>
     <script>
         var productosSeleccionados = [];
@@ -123,7 +102,8 @@
         });
     </script>
 
-    
-    <a href="index.php">Ir a Inicio</a>
+    <div class="col-5 p-1" style="margin-left: 18px;">
+        <a href="index.php" class="btn btn-primary">Ir inicio</a>
+    </div>
 </body>
 </html>
